@@ -7,31 +7,25 @@
  */
 
 import React from 'react';
-import {SafeAreaView, StyleSheet, Image} from 'react-native';
+import {createDrawerNavigator} from '@react-navigation/drawer';
+import {NavigationContainer} from '@react-navigation/native';
 
-import {welcomeImage} from './assets/index';
+import HomeScreen from './screens/HomeScreen';
+import ButtonScreen from './screens/ButtonScreen';
 
-const App: () => React$Node = () => {
+const Drawer = createDrawerNavigator();
+
+const App = () => {
   return (
     <>
-      <SafeAreaView style={styles.view}>
-        <Image style={styles.image} source={welcomeImage} />
-      </SafeAreaView>
+      <NavigationContainer>
+        <Drawer.Navigator initialRouteName="Home" component={HomeScreen}>
+          <Drawer.Screen name="Home" component={HomeScreen} />
+          <Drawer.Screen name="Button" component={ButtonScreen} />
+        </Drawer.Navigator>
+      </NavigationContainer>
     </>
   );
 };
-
-const styles = StyleSheet.create({
-  image: {
-    width: 400,
-    height: 400,
-    resizeMode: 'stretch',
-  },
-  view: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
 
 export default App;
