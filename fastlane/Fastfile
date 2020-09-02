@@ -1,0 +1,54 @@
+desc 'Build Android App'
+lane :build_android do |options|
+  gradle(
+    task: 'clean',
+    project_dir: './android'
+  )
+
+  gradle(
+    task: 'assemble',
+    build_type: 'Release',
+    project_dir: './android'
+  )
+
+  if options[:publish_app]
+    publish(path: "#{lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH]}", platform: 'android')
+  end
+end
+
+desc 'Build iOS App'
+lane :build_ios do |options|
+  sh(
+    command: 'cd ../ios && pod install'
+  )
+
+  build_app(
+    workspace: './ios/vividusTestApp.xcworkspace',
+    scheme: 'vividusTestApp',
+    clean: true,
+    skip_package_ipa: true,
+    destination: 'platform=iOS Simulator,name=iPhone 11,OS=13.3',
+    skip_codesigning: true,
+    build_path: 'build'
+  )
+
+  sh(
+    command: 'cd ../build && \
+              find . -name "*app" -type d -exec cp -r {} . \;'
+  )
+
+  if options[:publish_app]
+    publish(path: '../build/vividusTestApp.app', platform: 'ios')
+  end
+end
+
+private_lane :publish do |options|
+  sh(
+    command: "readonly APP_NAME=$(basename #{options[:path]}) && \
+              cp -r #{options[:path]} $APP_NAME && \
+              readonly APP=vividus-test-app-#{options[:platform]}.zip && \
+              zip -r $APP $APP_NAME && \
+              curl -v -u #{ENV["SAUCELABS_USER"]}:#{ENV["SAUCELABS_KEY"]} -X POST https://eu-central-1.saucelabs.com/rest/v1/storage/#{ENV["SAUCELABS_USER"]}/$APP?overwrite=true \
+              -H \"Content-Type: application/octet-stream\" --data-binary @$APP"
+  )
+end
