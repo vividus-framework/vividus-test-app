@@ -11,6 +11,7 @@ class NavigationHeader extends Component {
             name="menu"
             color="#fff"
             onPress={() => this.props.navigation.toggleDrawer()}
+            testID="menu-toggler"
           />
         }
         centerComponent={{text: this.props.title, style: {color: '#fff'}}}
@@ -19,6 +20,7 @@ class NavigationHeader extends Component {
             name="home"
             color="#fff"
             onPress={() => this.props.navigation.navigate('Home')}
+            testID="home-navigator"
           />
         }
       />
