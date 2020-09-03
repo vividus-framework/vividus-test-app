@@ -27,7 +27,7 @@ lane :build_ios do |options|
     scheme: 'vividusTestApp',
     clean: true,
     skip_package_ipa: true,
-    destination: 'platform=iOS Simulator,name=iPhone 11,OS=13.3',
+    sdk: 'iphonesimulator',
     skip_codesigning: true,
     build_path: 'build'
   )

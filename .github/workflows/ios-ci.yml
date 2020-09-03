@@ -40,8 +40,8 @@ jobs:
       - name: Run test
         run: npm run test
 
-      - name: Select Xcode 11.3
-        run: sudo xcode-select --switch /Applications/Xcode_11.3.app
+      - name: Select Xcode 11.4
+        run: sudo xcode-select --switch /Applications/Xcode_11.4.app
 
       - name: Install bundler
         run: |
