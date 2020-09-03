@@ -12,49 +12,5 @@ jobs:
   build:
     runs-on: macos-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: NPM cache
-        uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: macos-ios-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            macos-ios-node-
-      
-      - name: Cocoapods cache
-        uses: actions/cache@v2
-        with:
-          path: ios/Pods
-          key: macos-ios-pods-${{ hashFiles('**/Podfile.lock') }}
-          restore-keys: |
-            macos-ios-pods-
-
-      - name: Install npm dependencies
-        run: npm install
-      
-      - name: Run lint
-        run: npm run lint
-
-      - name: Run test
-        run: npm run test
-
-      - name: Select Xcode 11.3
-        run: sudo xcode-select --switch /Applications/Xcode_11.3.app
-
-      - name: Install bundler
-        run: |
-          sudo bundle update --bundler
-          sudo bundle install
-
-      - name: iOS build
-        env:
-          SAUCELABS_USER: ${{ secrets.SAUCELABS_USER }}
-          SAUCELABS_KEY: ${{ secrets.SAUCELABS_KEY }}
-        run: |
-          PUBLISH_APP=false
-          if [[ $GITHUB_HEAD_REF = 'master' ]]; then
-            PUBLISH_APP=true
-          fi
-          npm run build-ios -- publish_app:$PUBLISH_APP
+      - name: Env
+        run: env
