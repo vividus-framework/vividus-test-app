@@ -52,9 +52,5 @@ jobs:
         env:
           SAUCELABS_USER: ${{ secrets.SAUCELABS_USER }}
           SAUCELABS_KEY: ${{ secrets.SAUCELABS_KEY }}
-        run: |
-          PUBLISH_APP=false
-          if [[ $GITHUB_HEAD_REF = 'master' ]]; then
-            PUBLISH_APP=true
-          fi
-          npm run build-ios -- publish_app:$PUBLISH_APP
+          PUBLISH_APP: ${{ github.ref == 'refs/heads/master' }}
+        run: npm run build-ios -- publish_app:$PUBLISH_APP
