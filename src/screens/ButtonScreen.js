@@ -17,7 +17,7 @@ class ButtonScreen extends Component {
       <>
         <NavigationHeader title="Button" navigation={this.props.navigation} />
         <SafeAreaView style={styles.view}>
-          <Text h3 testID="incrementDisplay">
+          <Text h3 testID="increment-display">
             Count: {this.state.number}
           </Text>
           <Button
