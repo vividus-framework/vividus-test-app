@@ -1,0 +1,64 @@
+name: Vividus Android App CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: NPM cache
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ubuntu-android-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ubuntu-android-node-
+      
+      - name: Gradle cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+          key: ubuntu-android-gradle-${{ hashFiles('**/*.gradle*') }}
+          restore-keys: |
+            ubuntu-android-gradle-
+
+      - name: Install npm dependencies
+        run: npm install
+      
+      - name: Run lint
+        run: npm run lint
+
+      - name: Run test
+        run: npm run test
+
+      - name: Install JDK 14
+        uses: actions/setup-java@v1
+        with:
+          java-version: 14
+
+      - name: Install bundler
+        run: |
+          sudo gem install bundler
+          sudo bundle update --bundler
+
+      - name: Android build
+        env:
+          SAUCELABS_USER: ${{ secrets.SAUCELABS_USER }}
+          SAUCELABS_KEY: ${{ secrets.SAUCELABS_KEY }}
+        run: |
+          PUBLISH_APP=false
+          if [[ $GITHUB_HEAD_REF = 'master' ]]; then
+            PUBLISH_APP=true
+          fi
+          npm run build-android -- publish_app:$PUBLISH_APP

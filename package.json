@@ -7,7 +7,9 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "build-android": "bundle exec fastlane build_android",
+    "build-ios": "bundle exec fastlane build_ios"
   },
   "dependencies": {
     "@react-navigation/drawer": "^5.8.6",
