@@ -17,7 +17,10 @@ class ButtonScreen extends Component {
       <>
         <NavigationHeader title="Button" navigation={this.props.navigation} />
         <SafeAreaView style={styles.view}>
-          <Text h3 testID="increment-display">
+          <Text
+            h3
+            testID="increment-display"
+            accessibilityLabel="increment-display">
             Count: {this.state.number}
           </Text>
           <Button
@@ -30,6 +33,7 @@ class ButtonScreen extends Component {
             icon={<Icon name="add" color="#fff" />}
             buttonStyle={styles.incrementButton}
             testID="increment"
+            accessibilityLabel="increment"
           />
         </SafeAreaView>
       </>
