@@ -19,8 +19,8 @@ class ButtonScreen extends Component {
         <SafeAreaView style={styles.view}>
           <Text
             h3
-            testID="increment-display"
-            accessibilityLabel="increment-display">
+            testID="increment-display-testID"
+            accessibilityLabel="increment-display-accessibilityLabel">
             Count: {this.state.number}
           </Text>
           <Button
@@ -32,8 +32,8 @@ class ButtonScreen extends Component {
             }}
             icon={<Icon name="add" color="#fff" />}
             buttonStyle={styles.incrementButton}
-            testID="increment"
-            accessibilityLabel="increment"
+            testID="increment-testID"
+            accessibilityLabel="increment-accessibilityLabel"
           />
         </SafeAreaView>
       </>
