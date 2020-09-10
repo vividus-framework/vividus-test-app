@@ -12,6 +12,7 @@ import {NavigationContainer} from '@react-navigation/native';
 
 import HomeScreen from './screens/HomeScreen';
 import ButtonScreen from './screens/ButtonScreen';
+import InputScreen from './screens/InputScreen';
 
 const Drawer = createDrawerNavigator();
 
@@ -22,6 +23,7 @@ const App = () => {
         <Drawer.Navigator initialRouteName="Home" component={HomeScreen}>
           <Drawer.Screen name="Home" component={HomeScreen} />
           <Drawer.Screen name="Button" component={ButtonScreen} />
+          <Drawer.Screen name="Input" component={InputScreen} />
         </Drawer.Navigator>
       </NavigationContainer>
     </>
