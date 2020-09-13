@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {SafeAreaView, StyleSheet, Image} from 'react-native';
 
+import {globalStyles} from '../sheet/index';
+
 import {welcomeImage} from '../assets/index';
 import NavigationHeader from '../components/NavigationHeader';
 
@@ -9,7 +11,7 @@ class HomeScreen extends Component {
     return (
       <>
         <NavigationHeader title="Home" navigation={this.props.navigation} />
-        <SafeAreaView style={styles.view}>
+        <SafeAreaView style={globalStyles.centredView}>
           <Image style={styles.image} source={welcomeImage} />
         </SafeAreaView>
       </>
@@ -22,11 +24,6 @@ const styles = StyleSheet.create({
     width: 400,
     height: 400,
     resizeMode: 'stretch',
-  },
-  view: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
 

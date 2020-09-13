@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {SafeAreaView, StyleSheet} from 'react-native';
 
+import {globalStyles} from '../assets/index';
+
 import NavigationHeader from '../components/NavigationHeader';
 import {Input, Icon, Text} from 'react-native-elements';
 
@@ -28,7 +30,7 @@ class InputScreen extends Component {
           <Input
             label="Your name"
             placeholder="Enter your name..."
-            leftIcon={<Icon name="account-box" color={styles.icon.color} />}
+            leftIcon={<Icon name="account-box" iconStyle={globalStyles.icon} />}
             onChangeText={(text) => {
               const name = text.length === 0 ? defaultName : text;
               this.setState({name: name});
@@ -47,9 +49,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'flex-start',
-  },
-  icon: {
-    color: '#464547',
   },
 });
 

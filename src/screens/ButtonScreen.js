@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {SafeAreaView, StyleSheet} from 'react-native';
 
+import {globalStyles} from '../sheet/index';
+
 import NavigationHeader from '../components/NavigationHeader';
 import {Text, Button, Icon} from 'react-native-elements';
 
@@ -16,7 +18,7 @@ class ButtonScreen extends Component {
     return (
       <>
         <NavigationHeader title="Button" navigation={this.props.navigation} />
-        <SafeAreaView style={styles.view}>
+        <SafeAreaView style={globalStyles.centredView}>
           <Text
             h3
             testID="increment-display-testID"
@@ -42,11 +44,6 @@ class ButtonScreen extends Component {
 }
 
 const styles = StyleSheet.create({
-  view: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
   incrementButton: {
     backgroundColor: '#fac241',
     margin: '10%',
