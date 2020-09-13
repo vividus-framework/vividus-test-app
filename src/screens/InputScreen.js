@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {SafeAreaView, StyleSheet} from 'react-native';
 
-import {globalStyles} from '../assets/index';
+import {globalStyles} from '../sheet/index';
 
 import NavigationHeader from '../components/NavigationHeader';
 import {Input, Icon, Text} from 'react-native-elements';
