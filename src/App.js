@@ -14,6 +14,7 @@ import HomeScreen from './screens/HomeScreen';
 import ButtonScreen from './screens/ButtonScreen';
 import InputScreen from './screens/InputScreen';
 import WaitScreen from './screens/WaitScreen';
+import ScrollViewScreen from './screens/ScrollViewScreen';
 
 const Drawer = createDrawerNavigator();
 
@@ -26,6 +27,7 @@ const App = () => {
           <Drawer.Screen name="Button" component={ButtonScreen} />
           <Drawer.Screen name="Input" component={InputScreen} />
           <Drawer.Screen name="Wait" component={WaitScreen} />
+          <Drawer.Screen name="Scroll View" component={ScrollViewScreen} />
         </Drawer.Navigator>
       </NavigationContainer>
     </>
