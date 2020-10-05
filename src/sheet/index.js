@@ -9,6 +9,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  button: {
+    backgroundColor: '#fac241',
+    margin: '10%',
+  },
 });
 
 module.exports = {
