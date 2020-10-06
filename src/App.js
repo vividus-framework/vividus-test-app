@@ -13,6 +13,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import HomeScreen from './screens/HomeScreen';
 import ButtonScreen from './screens/ButtonScreen';
 import InputScreen from './screens/InputScreen';
+import ImageScreen from './screens/ImageScreen';
 import WaitScreen from './screens/WaitScreen';
 import ScrollViewScreen from './screens/ScrollViewScreen';
 
@@ -26,6 +27,7 @@ const App = () => {
           <Drawer.Screen name="Home" component={HomeScreen} />
           <Drawer.Screen name="Button" component={ButtonScreen} />
           <Drawer.Screen name="Input" component={InputScreen} />
+          <Drawer.Screen name="Image" component={ImageScreen} />
           <Drawer.Screen name="Wait" component={WaitScreen} />
           <Drawer.Screen name="Scroll View" component={ScrollViewScreen} />
         </Drawer.Navigator>

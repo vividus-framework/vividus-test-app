@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {SafeAreaView, StyleSheet} from 'react-native';
+import {SafeAreaView} from 'react-native';
 
 import {globalStyles} from '../sheet/index';
 
@@ -33,7 +33,7 @@ class ButtonScreen extends Component {
               });
             }}
             icon={<Icon name="add" color="#fff" />}
-            buttonStyle={styles.incrementButton}
+            buttonStyle={globalStyles.button}
             testID="increment-testID"
             accessibilityLabel="increment-accessibilityLabel"
           />
@@ -42,12 +42,5 @@ class ButtonScreen extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  incrementButton: {
-    backgroundColor: '#fac241',
-    margin: '10%',
-  },
-});
 
 export default ButtonScreen;
