@@ -52,9 +52,10 @@ class ImageScreen extends Component {
           <View style={globalStyles.centredView}>
             {data && (
               <Text
+                h2
                 testID="image-info-testID"
                 accessibilityLabel="image-info-accessibilityLabel">
-                {JSON.stringify(data)}
+                {data.width}x{data.height}
               </Text>
             )}
           </View>
