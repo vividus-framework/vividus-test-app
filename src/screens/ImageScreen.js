@@ -51,10 +51,7 @@ class ImageScreen extends Component {
         <SafeAreaView flex={1}>
           <View style={globalStyles.centredView}>
             {data && (
-              <Text
-                h2
-                testID="image-info-testID"
-                accessibilityLabel="image-info-accessibilityLabel">
+              <Text h2>
                 {data.width}x{data.height}
               </Text>
             )}
