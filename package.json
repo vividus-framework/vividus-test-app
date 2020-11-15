@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@react-native-community/datetimepicker": "^3.0.4",
-    "@react-navigation/drawer": "^5.8.6",
+    "@react-navigation/drawer": "^5.11.2",
     "@react-navigation/native": "^5.8.9",
     "react": "^16.13.1",
     "react-native": "^0.63.3",
