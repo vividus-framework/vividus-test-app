@@ -1,10 +1,12 @@
 import React, {Component} from 'react';
-import {SafeAreaView, StyleSheet} from 'react-native';
+import {SafeAreaView, StyleSheet, TouchableOpacity} from 'react-native';
 
 import {globalStyles} from '../sheet/index';
+import automationIDs from '../utils/automationIDs';
 
 import NavigationHeader from '../components/NavigationHeader';
 import {Input, Icon, Text} from 'react-native-elements';
+import Clipboard from '@react-native-community/clipboard';
 
 const defaultName = 'Unknown';
 
@@ -38,6 +40,11 @@ class InputScreen extends Component {
             testID="name-input-testID"
             accessibilityLabel="name-input-accessibilityLabel"
           />
+          <TouchableOpacity
+            onPress={() => Clipboard.setString(this.state.name)}
+            {...automationIDs('CopyTextToClipboardButton')}>
+            <Text>Copy text to Clipboard</Text>
+          </TouchableOpacity>
         </SafeAreaView>
       </>
     );

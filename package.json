@@ -12,6 +12,7 @@
     "build-ios": "bundle exec fastlane build_ios"
   },
   "dependencies": {
+    "@react-native-community/clipboard": "^1.5.1",
     "@react-native-community/datetimepicker": "^3.0.9",
     "@react-navigation/drawer": "^5.8.6",
     "@react-navigation/native": "^5.8.10",
