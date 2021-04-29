@@ -1,0 +1,48 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: weekly
+    day: sunday
+    time: "02:00"
+  open-pull-requests-limit: 99
+  reviewers:
+  - uarlouski
+  - valfirst
+  ignore:
+  - dependency-name: react-native-image-picker
+    versions:
+    - 3.1.4
+    - 3.2.1
+    - 3.3.2
+  - dependency-name: react-native-screens
+    versions:
+    - 3.0.0
+  - dependency-name: y18n
+    versions:
+    - 4.0.1
+  - dependency-name: react-native-reanimated
+    versions:
+    - 2.0.0
+    - 2.0.1
+  - dependency-name: "@react-navigation/drawer"
+    versions:
+    - 5.12.2
+    - 5.12.3
+    - 5.12.4
+  - dependency-name: react-test-renderer
+    versions:
+    - 17.0.1
+  - dependency-name: react-native
+    versions:
+    - 0.64.0
+  - dependency-name: react
+    versions:
+    - 17.0.1
+  - dependency-name: react-native-vector-icons
+    versions:
+    - 8.0.0
+  - dependency-name: react-native-webview
+    versions:
+    - 11.2.0
