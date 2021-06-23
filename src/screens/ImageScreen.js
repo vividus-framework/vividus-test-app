@@ -6,7 +6,7 @@ import {globalStyles} from '../sheet/index';
 
 import NavigationHeader from '../components/NavigationHeader';
 import {Image, Button, Text} from 'react-native-elements';
-import ImagePicker from 'react-native-image-picker';
+import launchImageLibrary from 'react-native-image-picker';
 
 class ImageScreen extends Component {
   constructor(props) {
@@ -25,18 +25,20 @@ class ImageScreen extends Component {
       },
     };
 
-    ImagePicker.showImagePicker(options, (response) => {
+    launchImageLibrary(options, (response) => {
       if (response.didCancel) {
         console.log('User cancelled image picker');
-      } else if (response.error) {
-        console.log('ImagePicker Error: ', response.error);
+      } else if (response.errorMessage) {
+        console.log('Image library Error: ', response.errorMessage);
       } else {
-        const source = {uri: response.uri};
+        const image = response.assets[0];
         this.setState({
-          image: source,
+          image: {
+            uri: image.uri,
+          },
           data: {
-            height: response.height,
-            width: response.width,
+            height: image.height,
+            width: image.width,
           },
         });
       }
