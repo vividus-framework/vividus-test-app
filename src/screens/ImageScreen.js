@@ -6,7 +6,7 @@ import {globalStyles} from '../sheet/index';
 
 import NavigationHeader from '../components/NavigationHeader';
 import {Image, Button, Text} from 'react-native-elements';
-import launchImageLibrary from 'react-native-image-picker';
+import {launchImageLibrary} from 'react-native-image-picker';
 
 class ImageScreen extends Component {
   constructor(props) {
