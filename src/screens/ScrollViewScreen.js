@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {SafeAreaView, ScrollView, StyleSheet} from 'react-native';
+import {View, ScrollView, StyleSheet} from 'react-native';
 
 import NavigationHeader from '../components/NavigationHeader';
 import {Text} from 'react-native-elements';
@@ -34,7 +34,7 @@ class ScrollViewScreen extends Component {
           title="Scroll View"
           navigation={this.props.navigation}
         />
-        <SafeAreaView style={styles.view}>
+        <View style={styles.view}>
           <ScrollView>
             <Text
               style={{...styles.textMarker, marginTop: '10%'}}
@@ -52,7 +52,7 @@ class ScrollViewScreen extends Component {
               Java history end
             </Text>
           </ScrollView>
-        </SafeAreaView>
+        </View>
       </>
     );
   }

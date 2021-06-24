@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {SafeAreaView, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, StyleSheet, TouchableOpacity} from 'react-native';
 
 import {globalStyles} from '../sheet/index';
 import automationIDs from '../utils/automationIDs';
@@ -22,7 +22,7 @@ class InputScreen extends Component {
     return (
       <>
         <NavigationHeader title="Input" navigation={this.props.navigation} />
-        <SafeAreaView style={styles.view}>
+        <View style={styles.view}>
           <Text
             h3
             testID="name-display-testID"
@@ -45,7 +45,7 @@ class InputScreen extends Component {
             {...automationIDs('CopyTextToClipboardButton')}>
             <Text>Copy text to Clipboard</Text>
           </TouchableOpacity>
-        </SafeAreaView>
+        </View>
       </>
     );
   }

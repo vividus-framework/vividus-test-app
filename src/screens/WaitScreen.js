@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {SafeAreaView, StyleSheet, View, Image} from 'react-native';
+import {StyleSheet, View, Image} from 'react-native';
 
 import {globalStyles} from '../sheet/index';
 
@@ -38,7 +38,7 @@ class WaitScreen extends Component {
     return (
       <>
         <NavigationHeader title="Wait" navigation={this.props.navigation} />
-        <SafeAreaView style={styles.view}>
+        <View style={styles.view}>
           <View style={styles.imageView}>
             {this.state.pictureShown ? (
               <Image
@@ -92,7 +92,7 @@ class WaitScreen extends Component {
               accessibilityLabel="timeout-input-accessibilityLabel"
             />
           </View>
-        </SafeAreaView>
+        </View>
       </>
     );
   }

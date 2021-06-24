@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {SafeAreaView, StyleSheet, Image} from 'react-native';
+import {View, StyleSheet, Image} from 'react-native';
 
 import {globalStyles} from '../sheet/index';
 
@@ -11,9 +11,9 @@ class HomeScreen extends Component {
     return (
       <>
         <NavigationHeader title="Home" navigation={this.props.navigation} />
-        <SafeAreaView style={globalStyles.centredView}>
+        <View style={globalStyles.centredView}>
           <Image style={styles.image} source={welcomeImage} />
-        </SafeAreaView>
+        </View>
       </>
     );
   }

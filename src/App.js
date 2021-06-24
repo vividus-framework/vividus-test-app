@@ -7,6 +7,7 @@
  */
 
 import React from 'react';
+import {SafeAreaView} from 'react-native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {NavigationContainer} from '@react-navigation/native';
 
@@ -23,7 +24,7 @@ const Drawer = createDrawerNavigator();
 
 const App = () => {
   return (
-    <>
+    <SafeAreaView style={{flex: 1}}>
       <NavigationContainer>
         <Drawer.Navigator initialRouteName="Home" component={HomeScreen}>
           <Drawer.Screen name="Home" component={HomeScreen} />
@@ -36,7 +37,7 @@ const App = () => {
           <Drawer.Screen name="Web View" component={WebViewScreen} />
         </Drawer.Navigator>
       </NavigationContainer>
-    </>
+    </SafeAreaView>
   );
 };
 

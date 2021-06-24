@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {SafeAreaView} from 'react-native';
+import {View} from 'react-native';
 
 import {globalStyles} from '../sheet/index';
 
@@ -26,7 +26,7 @@ class DatePickerScreen extends Component {
           title="Date Picker"
           navigation={this.props.navigation}
         />
-        <SafeAreaView>
+        <View>
           <Input
             label="Date"
             leftIcon={<Icon name="av-timer" iconStyle={globalStyles.icon} />}
@@ -40,7 +40,7 @@ class DatePickerScreen extends Component {
               this.setState({value: newDate.toLocaleString()});
             }}
           />
-        </SafeAreaView>
+        </View>
       </>
     );
   }
