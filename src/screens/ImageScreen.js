@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {SafeAreaView, StyleSheet, ActivityIndicator, View} from 'react-native';
+import {StyleSheet, ActivityIndicator, View} from 'react-native';
 
 import {welcomeImage} from '../assets/index';
 import {globalStyles} from '../sheet/index';
@@ -50,7 +50,7 @@ class ImageScreen extends Component {
     return (
       <>
         <NavigationHeader title="Image" navigation={this.props.navigation} />
-        <SafeAreaView flex={1}>
+        <View flex={1}>
           <View style={globalStyles.centredView}>
             {data && (
               <Text h2>
@@ -74,7 +74,7 @@ class ImageScreen extends Component {
               accessibilityLabel="select-image-accessibilityLabel"
             />
           </View>
-        </SafeAreaView>
+        </View>
       </>
     );
   }

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {SafeAreaView} from 'react-native';
+import {View} from 'react-native';
 
 import {WebView} from 'react-native-webview';
 import NavigationHeader from '../components/NavigationHeader';
@@ -15,12 +15,12 @@ class WebViewScreen extends Component {
     return (
       <>
         <NavigationHeader title="WebView" navigation={this.props.navigation} />
-        <SafeAreaView flex={1}>
+        <View flex={1}>
           <WebView
             {...automationIDs('webView')}
             source={{html: '<h1 id="welcome-message">Hello world</h1>'}}
           />
-        </SafeAreaView>
+        </View>
       </>
     );
   }

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {SafeAreaView} from 'react-native';
+import {View} from 'react-native';
 
 import {globalStyles} from '../sheet/index';
 
@@ -18,7 +18,7 @@ class ButtonScreen extends Component {
     return (
       <>
         <NavigationHeader title="Button" navigation={this.props.navigation} />
-        <SafeAreaView style={globalStyles.centredView}>
+        <View style={globalStyles.centredView}>
           <Text
             h3
             testID="increment-display-testID"
@@ -37,7 +37,7 @@ class ButtonScreen extends Component {
             testID="increment-testID"
             accessibilityLabel="increment-accessibilityLabel"
           />
-        </SafeAreaView>
+        </View>
       </>
     );
   }
