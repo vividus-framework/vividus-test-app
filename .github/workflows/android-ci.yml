@@ -58,3 +58,12 @@ jobs:
           SAUCELABS_KEY: ${{ secrets.SAUCELABS_KEY }}
           PUBLISH_APP: ${{ github.ref == 'refs/heads/master' }}
         run: npm run build-android -- publish_app:$PUBLISH_APP
+
+      - name: Upload Android application
+        if: github.ref == 'refs/heads/master'
+        uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
+        with:
+          files: fastlane/vividus-test-app-android.zip
+          tag_name: 0.1.0
