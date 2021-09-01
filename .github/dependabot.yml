@@ -10,3 +10,13 @@ updates:
   reviewers:
   - uarlouski
   - valfirst
+- package-ecosystem: github-actions
+  directory: "/"
+  schedule:
+    interval: weekly
+    day: sunday
+    time: "02:00"
+  open-pull-requests-limit: 99
+  reviewers:
+  - uarlouski
+  - valfirst
