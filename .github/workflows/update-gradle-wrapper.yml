@@ -10,7 +10,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: NPM cache
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ubuntu-android-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ubuntu-android-node-
+
+      - name: Install npm dependencies
+        run: npm install
 
       - name: Update Gradle Wrapper
         uses: gradle-update/update-gradle-wrapper-action@v1
