@@ -74,7 +74,7 @@ class WaitScreen extends Component {
               label="Timeout"
               defaultValue={this.state.timeout.toString()}
               leftIcon={<Icon name="timer" iconStyle={globalStyles.icon} />}
-              onChangeText={(text) => {
+              onChangeText={text => {
                 if (text.length > 0) {
                   if (isNaN(text)) {
                     this.inputRef.current.shake();

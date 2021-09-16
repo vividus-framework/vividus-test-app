@@ -33,7 +33,7 @@ class InputScreen extends Component {
             label="Your name"
             placeholder="Enter your name..."
             leftIcon={<Icon name="account-box" iconStyle={globalStyles.icon} />}
-            onChangeText={(text) => {
+            onChangeText={text => {
               const name = text.length === 0 ? defaultName : text;
               this.setState({name: name});
             }}

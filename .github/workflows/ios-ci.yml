@@ -22,7 +22,7 @@ jobs:
           key: macos-ios-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             macos-ios-node-
-      
+
       - name: Cocoapods cache
         uses: actions/cache@v2
         with:
@@ -33,15 +33,15 @@ jobs:
 
       - name: Install npm dependencies
         run: npm install
-      
+
       - name: Run lint
         run: npm run lint
 
       - name: Run test
         run: npm run test
 
-      - name: Select Xcode 11.4
-        run: sudo xcode-select --switch /Applications/Xcode_11.4.app
+      - name: Select Xcode 12.4
+        run: sudo xcode-select --switch /Applications/Xcode_12.4.app
 
       - name: Install bundler
         run: |
