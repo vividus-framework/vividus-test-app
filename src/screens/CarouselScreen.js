@@ -66,12 +66,12 @@ class CarouselScreen extends Component {
           <Carousel
             inactiveSlideOpacity={0.1}
             activeSlideOffset={50}
-            ref={(ref) => (this.carousel = ref)}
+            ref={ref => (this.carousel = ref)}
             data={this.state.carouselItems}
             sliderWidth={700}
             itemWidth={300}
             renderItem={this._renderItem}
-            onSnapToItem={(index) => this.setState({activeIndex: index})}
+            onSnapToItem={index => this.setState({activeIndex: index})}
           />
         </View>
       </>
