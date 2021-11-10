@@ -15,6 +15,7 @@ import HomeScreen from './screens/HomeScreen';
 import ButtonScreen from './screens/ButtonScreen';
 import InputScreen from './screens/InputScreen';
 import ImageScreen from './screens/ImageScreen';
+import QRCodeScreen from './screens/QRCodeScreen'
 import WaitScreen from './screens/WaitScreen';
 import DatePickerScreen from './screens/DatePickerScreen';
 import ScrollViewScreen from './screens/ScrollViewScreen';
@@ -32,6 +33,7 @@ const App = () => {
           <Drawer.Screen name="Button" component={ButtonScreen} />
           <Drawer.Screen name="Input" component={InputScreen} />
           <Drawer.Screen name="Image" component={ImageScreen} />
+          <Drawer.Screen name="QR Code" component={QRCodeScreen} />
           <Drawer.Screen name="Wait" component={WaitScreen} />
           <Drawer.Screen name="Date Picker" component={DatePickerScreen} />
           <Drawer.Screen name="Scroll View" component={ScrollViewScreen} />
