@@ -15,7 +15,7 @@ import HomeScreen from './screens/HomeScreen';
 import ButtonScreen from './screens/ButtonScreen';
 import InputScreen from './screens/InputScreen';
 import ImageScreen from './screens/ImageScreen';
-import QRCodeScreen from './screens/QRCodeScreen'
+import QRCodeScreen from './screens/QRCodeScreen';
 import WaitScreen from './screens/WaitScreen';
 import DatePickerScreen from './screens/DatePickerScreen';
 import ScrollViewScreen from './screens/ScrollViewScreen';

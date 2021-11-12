@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     flex: 4,
     justifyContent: 'center',
     alignItems: 'center',
-  }
+  },
 });
 
 export default QRCodeScreen;
