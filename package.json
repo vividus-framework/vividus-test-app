@@ -29,7 +29,7 @@
     "react-native-webview": "^11.14.4"
   },
   "devDependencies": {
-    "@babel/core": "^7.16.5",
+    "@babel/core": "^7.16.7",
     "@babel/runtime": "^7.16.5",
     "@react-native-community/eslint-config": "^3.0.1",
     "babel-jest": "^27.1.1",
