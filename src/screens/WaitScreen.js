@@ -7,6 +7,8 @@ import NavigationHeader from '../components/NavigationHeader';
 import {welcomeImage} from '../assets/index';
 import {Button, Icon, Input} from 'react-native-elements';
 
+import automationIDs from '../utils/automationIDs';
+
 class WaitScreen extends Component {
   constructor(props) {
     super(props);
@@ -44,8 +46,7 @@ class WaitScreen extends Component {
               <Image
                 style={styles.image}
                 source={welcomeImage}
-                testID="picture-testID"
-                accessibilityLabel="picture-accessibilityLabel"
+                {...automationIDs('picture')}
               />
             ) : null}
           </View>
@@ -56,8 +57,7 @@ class WaitScreen extends Component {
               type="solid"
               disabled={this.state.controlsDisabled || this.state.pictureShown}
               onPress={() => this.togglePictureVisibility()}
-              testID="show-picture-testID"
-              accessibilityLabel="show-picture-accessibilityLabel"
+              {...automationIDs('showPicture')}
             />
             <Button
               title="Hide"
@@ -65,8 +65,7 @@ class WaitScreen extends Component {
               type="solid"
               disabled={this.state.controlsDisabled || !this.state.pictureShown}
               onPress={() => this.togglePictureVisibility()}
-              testID="hide-picture-testID"
-              accessibilityLabel="hide-picture-accessibilityLabel"
+              {...automationIDs('hidePicture')}
             />
           </View>
           <View style={globalStyles.centredView}>
@@ -88,8 +87,7 @@ class WaitScreen extends Component {
               containerStyle={styles.timerInput}
               ref={this.inputRef}
               disabled={this.state.controlsDisabled}
-              testID="timeout-input-testID"
-              accessibilityLabel="timeout-input-accessibilityLabel"
+              {...automationIDs('timeoutInput')}
             />
           </View>
         </View>

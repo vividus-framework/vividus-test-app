@@ -8,6 +8,8 @@ import NavigationHeader from '../components/NavigationHeader';
 import {Image, Button, Text} from 'react-native-elements';
 import {launchImageLibrary} from 'react-native-image-picker';
 
+import automationIDs from '../utils/automationIDs';
+
 class ImageScreen extends Component {
   constructor(props) {
     super(props);
@@ -70,8 +72,7 @@ class ImageScreen extends Component {
               title="Select image"
               onPress={() => this.handleSelectImage()}
               buttonStyle={globalStyles.button}
-              testID="select-image-testID"
-              accessibilityLabel="select-image-accessibilityLabel"
+              {...automationIDs('selectImage')}
             />
           </View>
         </View>

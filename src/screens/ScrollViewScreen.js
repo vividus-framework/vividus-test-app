@@ -4,6 +4,8 @@ import {View, ScrollView, StyleSheet} from 'react-native';
 import NavigationHeader from '../components/NavigationHeader';
 import {Text} from 'react-native-elements';
 
+import automationIDs from '../utils/automationIDs';
+
 const tab = '\t\t\t\t';
 const mainText = `
 ${tab}Java is an object-oriented programming language developed by James Gosling and colleagues at Sun Microsystems in the early 1990s. Unlike conventional languages which are generally designed either to be compiled to native (machine) code, or to be interpreted from source code at runtime, Java is intended to be compiled to a bytecode, which is then run (generally using JIT compilation) by a Java Virtual Machine.
@@ -39,16 +41,14 @@ class ScrollViewScreen extends Component {
             <Text
               style={{...styles.textMarker, marginTop: '10%'}}
               h3
-              testID="history-start-testID"
-              accessibilityLabel="history-start-accessibilityLabel">
+              {...automationIDs('historyStart')}>
               Java history start
             </Text>
             <Text style={styles.mainText}>{mainText}</Text>
             <Text
               style={{...styles.textMarker, marginBottom: '15%'}}
               h3
-              testID="history-end-testID"
-              accessibilityLabel="history-end-accessibilityLabel">
+              {...automationIDs('historyEnd')}>
               Java history end
             </Text>
           </ScrollView>

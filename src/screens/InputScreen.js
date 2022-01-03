@@ -23,10 +23,7 @@ class InputScreen extends Component {
       <>
         <NavigationHeader title="Input" navigation={this.props.navigation} />
         <View style={styles.view}>
-          <Text
-            h3
-            testID="name-display-testID"
-            accessibilityLabel="name-display-accessibilityLabel">
+          <Text h3 {...automationIDs('nameDisplay')}>
             {this.state.name}
           </Text>
           <Input
@@ -37,8 +34,7 @@ class InputScreen extends Component {
               const name = text.length === 0 ? defaultName : text;
               this.setState({name: name});
             }}
-            testID="name-input-testID"
-            accessibilityLabel="name-input-accessibilityLabel"
+            {...automationIDs('nameInput')}
           />
           <TouchableOpacity
             onPress={() => Clipboard.setString(this.state.name)}
