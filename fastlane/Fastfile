@@ -12,7 +12,10 @@ lane :build_android do |options|
   )
 
   if options[:publish_app]
-    publish(path: "#{lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH]}", platform: 'android')
+    publish(
+      path: "#{lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH]}",
+      platform: 'android',
+      release_version: options[:release_version])
   end
 end
 
@@ -38,7 +41,10 @@ lane :build_ios do |options|
   )
 
   if options[:publish_app]
-    publish(path: '../build/vividusTestApp.app', platform: 'ios')
+    publish(
+      path: '../build/vividusTestApp.app',
+      platform: 'ios',
+      release_version: options[:release_version])
   end
 end
 
@@ -46,7 +52,7 @@ private_lane :publish do |options|
   sh(
     command: "readonly APP_NAME=$(basename #{options[:path]}) && \
               cp -r #{options[:path]} $APP_NAME && \
-              readonly APP=vividus-test-app-#{options[:platform]}.zip && \
+              readonly APP=vividus-test-app-#{options[:platform]}-#{options[:release_version]}.zip && \
               zip -r $APP $APP_NAME && \
               curl -v -u #{ENV["SAUCELABS_USER"]}:#{ENV["SAUCELABS_KEY"]} -X POST https://eu-central-1.saucelabs.com/rest/v1/storage/#{ENV["SAUCELABS_USER"]}/$APP?overwrite=true \
               -H \"Content-Type: application/octet-stream\" --data-binary @$APP"

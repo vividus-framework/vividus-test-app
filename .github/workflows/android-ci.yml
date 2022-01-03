@@ -11,6 +11,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    env:
+      RELEASE_VERSION: 0.2.0
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -57,7 +61,7 @@ jobs:
           SAUCELABS_USER: ${{ secrets.SAUCELABS_USER }}
           SAUCELABS_KEY: ${{ secrets.SAUCELABS_KEY }}
           PUBLISH_APP: ${{ github.ref == 'refs/heads/master' }}
-        run: npm run build-android -- publish_app:$PUBLISH_APP
+        run: npm run build-android -- publish_app:$PUBLISH_APP release_version:$RELEASE_VERSION
 
       - name: Upload Android application
         if: github.ref == 'refs/heads/master'
@@ -65,5 +69,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
         with:
-          files: fastlane/vividus-test-app-android.zip
-          tag_name: 0.1.0
+          files: fastlane/vividus-test-app-android-${{ env.RELEASE_VERSION }}.zip
+          tag_name: ${{ env.RELEASE_VERSION }}
