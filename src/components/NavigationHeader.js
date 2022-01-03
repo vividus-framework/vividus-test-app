@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {Header, Icon} from 'react-native-elements';
 
+import automationIDs from '../utils/automationIDs';
+
 class NavigationHeader extends Component {
   render() {
     return (
@@ -11,8 +13,7 @@ class NavigationHeader extends Component {
             name="menu"
             color="#fff"
             onPress={() => this.props.navigation.toggleDrawer()}
-            testID="menu-toggler-testID"
-            accessibilityLabel="menu-toggler-accessibilityLabel"
+            {...automationIDs('menuToggler')}
           />
         }
         centerComponent={{text: this.props.title, style: {color: '#fff'}}}
@@ -21,8 +22,7 @@ class NavigationHeader extends Component {
             name="home"
             color="#fff"
             onPress={() => this.props.navigation.navigate('Home')}
-            testID="home-navigator-testID"
-            accessibilityLabel="home-navigator-accessibilityLabel"
+            {...automationIDs('homeNavigator')}
           />
         }
       />

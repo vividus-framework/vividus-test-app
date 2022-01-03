@@ -6,6 +6,8 @@ import {globalStyles} from '../sheet/index';
 import NavigationHeader from '../components/NavigationHeader';
 import {Text, Button, Icon} from 'react-native-elements';
 
+import automationIDs from '../utils/automationIDs';
+
 class ButtonScreen extends Component {
   constructor(props) {
     super(props);
@@ -19,10 +21,7 @@ class ButtonScreen extends Component {
       <>
         <NavigationHeader title="Button" navigation={this.props.navigation} />
         <View style={globalStyles.centredView}>
-          <Text
-            h3
-            testID="increment-display-testID"
-            accessibilityLabel="increment-display-accessibilityLabel">
+          <Text h3 {...automationIDs('incrementDisplay')}>
             Count: {this.state.number}
           </Text>
           <Button
@@ -34,8 +33,7 @@ class ButtonScreen extends Component {
             }}
             icon={<Icon name="add" color="#fff" />}
             buttonStyle={globalStyles.button}
-            testID="increment-testID"
-            accessibilityLabel="increment-accessibilityLabel"
+            {...automationIDs('increment')}
           />
         </View>
       </>
