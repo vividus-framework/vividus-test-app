@@ -14,6 +14,7 @@
   "dependencies": {
     "@react-native-community/clipboard": "^1.5.1",
     "@react-native-community/datetimepicker": "^5.1.0",
+    "@react-native-community/slider": "^4.1.12",
     "@react-navigation/drawer": "^5.8.6",
     "@react-navigation/native": "^6.0.6",
     "react": "17.0.2",

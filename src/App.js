@@ -21,6 +21,7 @@ import DatePickerScreen from './screens/DatePickerScreen';
 import ScrollViewScreen from './screens/ScrollViewScreen';
 import WebViewScreen from './screens/WebViewScreen';
 import CarouselScreen from './screens/CarouselScreen';
+import SliderScreen from './screens/SliderScreen';
 
 const Drawer = createDrawerNavigator();
 
@@ -39,6 +40,7 @@ const App = () => {
           <Drawer.Screen name="Scroll View" component={ScrollViewScreen} />
           <Drawer.Screen name="Web View" component={WebViewScreen} />
           <Drawer.Screen name="Carousel" component={CarouselScreen} />
+          <Drawer.Screen name="Slider" component={SliderScreen} />
         </Drawer.Navigator>
       </NavigationContainer>
     </SafeAreaView>
