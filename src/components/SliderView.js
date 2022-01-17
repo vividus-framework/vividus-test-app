@@ -8,7 +8,7 @@ import Slider from '@react-native-community/slider';
 import automationIDs from '../utils/automationIDs';
 
 const SliderView = props => {
-  const [position, setPosition] = useState(props.min);
+  const [position, setPosition] = useState(props.default);
 
   return (
     <>
@@ -22,6 +22,7 @@ const SliderView = props => {
           minimumValue={props.min}
           maximumValue={props.max}
           step={1}
+          value={props.default}
           minimumTrackTintColor="#FFFFFF"
           maximumTrackTintColor="#000000"
           onValueChange={number => setPosition(number)}
