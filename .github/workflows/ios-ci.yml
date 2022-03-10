@@ -57,7 +57,12 @@ jobs:
           SAUCELABS_USER: ${{ secrets.SAUCELABS_USER }}
           SAUCELABS_KEY: ${{ secrets.SAUCELABS_KEY }}
           PUBLISH_APP: ${{ github.ref == 'refs/heads/master' }}
-        run: npm run build-ios -- publish_app:$PUBLISH_APP release_version:$RELEASE_VERSION
+        run: |
+          cd ios
+          # https://github.com/facebook/react-native/pull/32659
+          pod update RCT-Folly --no-repo-update
+          cd ..
+          npm run build-ios -- publish_app:$PUBLISH_APP release_version:$RELEASE_VERSION
 
       - name: Upload iOS application
         if: github.ref == 'refs/heads/master'
