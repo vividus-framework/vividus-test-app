@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import {View, ScrollView, StyleSheet} from 'react-native';
+import {View} from 'react-native';
+
+import {globalStyles} from '../sheet/index';
 
 import NavigationHeader from '../components/NavigationHeader';
-import {Text} from 'react-native-elements';
-
-import automationIDs from '../utils/automationIDs';
+import TextScrollView from '../components/TextScrollView';
 
 const tab = '\t\t\t\t';
 const mainText = `
@@ -36,45 +36,16 @@ class ScrollViewScreen extends Component {
           title="Scroll View"
           navigation={this.props.navigation}
         />
-        <View style={styles.view}>
-          <ScrollView>
-            <Text
-              style={{...styles.textMarker, marginTop: '10%'}}
-              h3
-              {...automationIDs('historyStart')}>
-              Java history start
-            </Text>
-            <Text style={styles.mainText}>{mainText}</Text>
-            <Text
-              style={{...styles.textMarker, marginBottom: '15%'}}
-              h3
-              {...automationIDs('historyEnd')}>
-              Java history end
-            </Text>
-          </ScrollView>
+        <View style={globalStyles.centredView}>
+          <TextScrollView
+            headerText={'Java history start'}
+            bodyText={mainText}
+            footerText={'Java history end'}
+          />
         </View>
       </>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  view: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  textMarker: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    textDecorationLine: 'underline',
-  },
-  mainText: {
-    fontSize: 22,
-    fontStyle: 'italic',
-    letterSpacing: 3,
-  },
-});
 
 export default ScrollViewScreen;
