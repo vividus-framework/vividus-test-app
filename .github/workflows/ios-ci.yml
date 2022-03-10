@@ -13,7 +13,7 @@ jobs:
     runs-on: macos-latest
 
     env:
-      RELEASE_VERSION: 0.2.0
+      RELEASE_VERSION: 0.3.0
 
     steps:
       - name: Checkout repository
