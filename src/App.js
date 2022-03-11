@@ -19,6 +19,7 @@ import QRCodeScreen from './screens/QRCodeScreen';
 import WaitScreen from './screens/WaitScreen';
 import DatePickerScreen from './screens/DatePickerScreen';
 import ScrollViewScreen from './screens/ScrollViewScreen';
+import ShortScrollViewScreen from './screens/ShortScrollViewScreen';
 import WebViewScreen from './screens/WebViewScreen';
 import CarouselScreen from './screens/CarouselScreen';
 import SliderScreen from './screens/SliderScreen';
@@ -38,6 +39,10 @@ const App = () => {
           <Drawer.Screen name="Wait" component={WaitScreen} />
           <Drawer.Screen name="Date Picker" component={DatePickerScreen} />
           <Drawer.Screen name="Scroll View" component={ScrollViewScreen} />
+          <Drawer.Screen
+            name="Short Scroll View"
+            component={ShortScrollViewScreen}
+          />
           <Drawer.Screen name="Web View" component={WebViewScreen} />
           <Drawer.Screen name="Carousel" component={CarouselScreen} />
           <Drawer.Screen name="Slider" component={SliderScreen} />
