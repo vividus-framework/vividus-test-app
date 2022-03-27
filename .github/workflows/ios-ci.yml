@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: NPM cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ~/.npm
           key: macos-ios-node-${{ hashFiles('**/package-lock.json') }}
@@ -28,7 +28,7 @@ jobs:
             macos-ios-node-
 
       - name: Cocoapods cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ios/Pods
           key: macos-ios-pods-${{ hashFiles('**/Podfile.lock') }}
