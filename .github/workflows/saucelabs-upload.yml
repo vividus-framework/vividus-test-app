@@ -1,15 +1,15 @@
-name: Upload latest Vividus App release into SauceLabs Storage
-
 on:
-  schedule:
-    - cron: '* 2 * * 6'
+  workflow_call:
+    inputs:
+      release-version:
+        required: true
+        type: string
 
 jobs:
-  build:
+  upload:
     runs-on: ubuntu-latest
 
     env:
-      RELEASE_VERSION: 0.3.0
       SAUCELABS_USER: ${{ secrets.SAUCELABS_USER }}
       SAUCELABS_KEY: ${{ secrets.SAUCELABS_KEY }}
     
@@ -20,10 +20,10 @@ jobs:
           for platform in ${platforms[@]};
           do
             echo "---------------------------------------------------------------"
-            echo "Upload release build version ${RELEASE_VERSION} for ${platform}"
+            echo "Upload release build version ${{ inputs.release-version }} for ${platform}"
             echo "---------------------------------------------------------------"
 
-            appFile=vividus-test-app-${platform}-${RELEASE_VERSION}.zip
-            curl -L https://github.com/vividus-framework/vividus-test-app/releases/download/${RELEASE_VERSION}/vividus-test-app-${platform}-${RELEASE_VERSION}.zip --output ${appFile}
+            appFile=vividus-test-app-${platform}-${{ inputs.release-version }}.zip
+            curl -L https://github.com/vividus-framework/vividus-test-app/releases/download/${{ inputs.release-version }}/vividus-test-app-${platform}-${{ inputs.release-version }}.zip --output ${appFile}
             curl -v -u ${SAUCELABS_USER}:${SAUCELABS_KEY} -X POST https://eu-central-1.saucelabs.com/rest/v1/storage/${SAUCELABS_USER}/${appFile}?overwrite=true -H "Content-Type: application/octet-stream" --data-binary @${appFile}
           done  

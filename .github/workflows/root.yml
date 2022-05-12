@@ -1,0 +1,44 @@
+name: Vividus Workflow
+
+env:
+  RELEASE_VERSION: 0.3.0
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+  schedule:
+    - cron: '* 2 * * 6'
+
+jobs:
+  saucelabs-upload-by-schedule:
+    if: github.event.schedule
+    name: SauceLabs Storage Upload by Scheduler
+    uses: ./.github/workflows/saucelabs-upload.yml
+    with:
+      release-version: $RELEASE_VERSION
+  
+  android-ci:
+    if: github.event.push || github.event.pull_request
+    name: Android App CI
+    uses: ./.github/workflows/android-ci.yml
+    with:
+      release-version: $RELEASE_VERSION
+
+  ios-ci:
+    if: github.event.push || github.event.pull_request
+    name: iOS App CI
+    uses: ./.github/workflows/ios-ci.yml
+    with:
+      release-version: $RELEASE_VERSION
+  
+  saucelabs-upload:
+    if: github.ref == 'refs/heads/master' && !github.event.schedule
+    needs: [ android-ci, ios-ci ]
+    name: SauceLabs Storage Upload
+    uses: ./.github/workflows/saucelabs-upload.yml
+    with:
+      release-version: $RELEASE_VERSION

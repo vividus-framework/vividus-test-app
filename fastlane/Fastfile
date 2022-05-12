@@ -11,12 +11,11 @@ lane :build_android do |options|
     project_dir: './android'
   )
 
-  if options[:publish_app]
-    publish(
-      path: "#{lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH]}",
-      platform: 'android',
-      release_version: options[:release_version])
-  end
+  archiveApp(
+    path: "#{lane_context[SharedValues::GRADLE_APK_OUTPUT_PATH]}",
+    platform: 'android',
+    release_version: options[:release_version]
+  )
 end
 
 desc 'Build iOS App'
@@ -40,21 +39,18 @@ lane :build_ios do |options|
               find . -name "*app" -type d -exec cp -r {} . \;'
   )
 
-  if options[:publish_app]
-    publish(
-      path: '../build/vividusTestApp.app',
-      platform: 'ios',
-      release_version: options[:release_version])
-  end
+  archiveApp(
+    path: '../build/vividusTestApp.app',
+    platform: 'ios',
+    release_version: options[:release_version]
+  )
 end
 
-private_lane :publish do |options|
+private_lane :archiveApp do |options|
   sh(
     command: "readonly APP_NAME=$(basename #{options[:path]}) && \
               cp -r #{options[:path]} $APP_NAME && \
               readonly APP=vividus-test-app-#{options[:platform]}-#{options[:release_version]}.zip && \
-              zip -r $APP $APP_NAME && \
-              curl -v -u #{ENV["SAUCELABS_USER"]}:#{ENV["SAUCELABS_KEY"]} -X POST https://eu-central-1.saucelabs.com/rest/v1/storage/#{ENV["SAUCELABS_USER"]}/$APP?overwrite=true \
-              -H \"Content-Type: application/octet-stream\" --data-binary @$APP"
+              zip -r $APP $APP_NAME"
   )
 end
