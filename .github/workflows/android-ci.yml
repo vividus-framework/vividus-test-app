@@ -1,19 +1,13 @@
-name: Vividus Android App CI
-
 on:
-  push:
-    branches:
-      - master
-  pull_request:
-    branches:
-      - master
+  workflow_call:
+    inputs:
+      release-version:
+        required: true
+        type: string
 
 jobs:
-  build:
+  build-android:
     runs-on: ubuntu-latest
-
-    env:
-      RELEASE_VERSION: 0.3.0
 
     steps:
       - name: Checkout repository
@@ -61,8 +55,7 @@ jobs:
         env:
           SAUCELABS_USER: ${{ secrets.SAUCELABS_USER }}
           SAUCELABS_KEY: ${{ secrets.SAUCELABS_KEY }}
-          PUBLISH_APP: ${{ github.ref == 'refs/heads/master' }}
-        run: npm run build-android -- publish_app:$PUBLISH_APP release_version:$RELEASE_VERSION
+        run: npm run build-android -- release_version:$RELEASE_VERSION
 
       - name: Upload Android application
         if: github.ref == 'refs/heads/master'
@@ -70,5 +63,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
         with:
-          files: fastlane/vividus-test-app-android-${{ env.RELEASE_VERSION }}.zip
-          tag_name: ${{ env.RELEASE_VERSION }}
+          files: fastlane/vividus-test-app-android-${{ inputs.release-version }}.zip
+          tag_name: ${{ inputs.release-version }}
