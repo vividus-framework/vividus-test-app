@@ -1,8 +1,5 @@
 name: Vividus Workflow
 
-env:
-  RELEASE_VERSION: 0.3.0
-
 on:
   push:
     branches:
@@ -13,27 +10,45 @@ on:
   schedule:
     - cron: '* 2 * * 6'
 
+env:
+  RELEASE_VERSION: 0.3.0
+
 jobs:
+  params:
+    name: Parse environments variables
+    runs-on: ubuntu-latest
+    outputs:
+      params: ${{ steps.env-vars.outputs.params }}
+    steps:
+      - name: install jq
+        run: pip install jq
+      - id: env-vars
+        name: Output environment variables
+        run: echo "::set-output name=params::$(echo $(jq -n 'env'))"
+
   saucelabs-upload-by-schedule:
     if: github.event_name == 'schedule'
+    needs: [ params ]
     name: SauceLabs Storage Upload by Scheduler
     uses: ./.github/workflows/saucelabs-upload.yml
     with:
-      release-version: $RELEASE_VERSION
+      release-version: ${{ fromJson(needs.params.outputs.params).RELEASE_VERSION }}
   
   android-ci:
     if: github.event_name == 'push' || github.event_name == 'pull_request'
+    needs: [ params ]
     name: Android App CI
     uses: ./.github/workflows/android-ci.yml
     with:
-      release-version: $RELEASE_VERSION
+      release-version: ${{ fromJson(needs.params.outputs.params).RELEASE_VERSION }}
 
   ios-ci:
     if: github.event_name == 'push' || github.event_name == 'pull_request'
+    needs: [ params ]
     name: iOS App CI
     uses: ./.github/workflows/ios-ci.yml
     with:
-      release-version: $RELEASE_VERSION
+      release-version: ${{ fromJson(needs.params.outputs.params).RELEASE_VERSION }}
   
   saucelabs-upload:
     if: github.ref == 'refs/heads/master' && github.event_name != 'schedule'
@@ -41,4 +56,4 @@ jobs:
     name: SauceLabs Storage Upload
     uses: ./.github/workflows/saucelabs-upload.yml
     with:
-      release-version: $RELEASE_VERSION
+      release-version: ${{ fromJson(needs.params.outputs.params).RELEASE_VERSION }}
