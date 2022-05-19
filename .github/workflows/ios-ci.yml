@@ -47,9 +47,6 @@ jobs:
           sudo bundle install
 
       - name: iOS build
-        env:
-          SAUCELABS_USER: ${{ secrets.SAUCELABS_USER }}
-          SAUCELABS_KEY: ${{ secrets.SAUCELABS_KEY }}
         run: |
           cd ios
           # https://github.com/facebook/react-native/pull/32659

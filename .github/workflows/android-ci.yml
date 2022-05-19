@@ -52,9 +52,6 @@ jobs:
           sudo bundle update --bundler
 
       - name: Android build
-        env:
-          SAUCELABS_USER: ${{ secrets.SAUCELABS_USER }}
-          SAUCELABS_KEY: ${{ secrets.SAUCELABS_KEY }}
         run: npm run build-android -- release_version:$RELEASE_VERSION
 
       - name: Upload Android application
