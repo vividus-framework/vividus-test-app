@@ -33,6 +33,7 @@ jobs:
     uses: ./.github/workflows/saucelabs-upload.yml
     with:
       release-version: ${{ fromJson(needs.params.outputs.params).RELEASE_VERSION }}
+    secrets: inherit
   
   android-ci:
     if: github.event_name == 'push' || github.event_name == 'pull_request'
@@ -41,6 +42,7 @@ jobs:
     uses: ./.github/workflows/android-ci.yml
     with:
       release-version: ${{ fromJson(needs.params.outputs.params).RELEASE_VERSION }}
+    secrets: inherit
 
   ios-ci:
     if: github.event_name == 'push' || github.event_name == 'pull_request'
@@ -49,6 +51,7 @@ jobs:
     uses: ./.github/workflows/ios-ci.yml
     with:
       release-version: ${{ fromJson(needs.params.outputs.params).RELEASE_VERSION }}
+    secrets: inherit
   
   saucelabs-upload:
     if: github.ref == 'refs/heads/master' && github.event_name != 'schedule'
@@ -57,3 +60,4 @@ jobs:
     uses: ./.github/workflows/saucelabs-upload.yml
     with:
       release-version: ${{ fromJson(needs.params.outputs.params).RELEASE_VERSION }}
+    secrets: inherit
