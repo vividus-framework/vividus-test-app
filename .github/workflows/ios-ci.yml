@@ -52,7 +52,7 @@ jobs:
           # https://github.com/facebook/react-native/pull/32659
           pod update RCT-Folly --no-repo-update
           cd ..
-          npm run build-ios -- release_version:$RELEASE_VERSION
+          npm run build-ios -- release_version:${{ inputs.release-version }}
 
       - name: Upload iOS application
         if: github.ref == 'refs/heads/master'

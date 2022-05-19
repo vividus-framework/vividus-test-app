@@ -52,7 +52,7 @@ jobs:
           sudo bundle update --bundler
 
       - name: Android build
-        run: npm run build-android -- release_version:$RELEASE_VERSION
+        run: npm run build-android -- release_version:${{ inputs.release-version }}
 
       - name: Upload Android application
         if: github.ref == 'refs/heads/master'
