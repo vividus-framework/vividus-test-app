@@ -38,9 +38,6 @@ jobs:
       - name: Run test
         run: npm run test
 
-      - name: Select Xcode 12.4
-        run: sudo xcode-select --switch /Applications/Xcode_12.4.app
-
       - name: Install bundler
         run: |
           sudo bundle update --bundler

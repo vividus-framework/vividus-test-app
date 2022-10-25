@@ -71,6 +71,7 @@ class CarouselScreen extends Component {
             sliderWidth={700}
             itemWidth={300}
             renderItem={this._renderItem}
+            enableSnap={false}
             onSnapToItem={index => this.setState({activeIndex: index})}
           />
         </View>
