@@ -13,22 +13,27 @@ class CarouselScreen extends Component {
         {
           title: 'Item 1',
           text: 'Text 1',
+          itemName: 'carousel_item_1',
         },
         {
           title: 'Item 2',
           text: 'Text 2',
+          itemName: 'carousel_item_2',
         },
         {
           title: 'Item 3',
           text: 'Text 3',
+          itemName: 'carousel_item_3',
         },
         {
           title: 'Item 4',
           text: 'Text 4',
+          itemName: 'carousel_item_4',
         },
         {
           title: 'Item 5',
           text: 'Text 5',
+          itemName: 'carousel_item_5',
         },
       ],
     };
@@ -37,6 +42,7 @@ class CarouselScreen extends Component {
   _renderItem({item, index}) {
     return (
       <View
+        {...automationIDs(item.itemName)}
         style={{
           backgroundColor: '#fac241',
           borderRadius: 5,
