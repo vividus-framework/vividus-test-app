@@ -30,6 +30,7 @@ lane :build_ios do |options|
     clean: true,
     skip_package_ipa: true,
     sdk: 'iphonesimulator',
+    destination: 'platform=iOS Simulator',
     skip_codesigning: true,
     build_path: 'build'
   )
