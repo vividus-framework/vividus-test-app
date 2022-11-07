@@ -11,7 +11,7 @@ on:
     - cron: '* 2 * * 6'
 
 env:
-  RELEASE_VERSION: 0.3.0
+  RELEASE_VERSION: 0.4.0
 
 jobs:
   params:
@@ -34,7 +34,7 @@ jobs:
     with:
       release-version: ${{ fromJson(needs.params.outputs.params).RELEASE_VERSION }}
     secrets: inherit
-  
+
   android-ci:
     if: github.event_name == 'push' || github.event_name == 'pull_request'
     needs: [ params ]
@@ -52,7 +52,7 @@ jobs:
     with:
       release-version: ${{ fromJson(needs.params.outputs.params).RELEASE_VERSION }}
     secrets: inherit
-  
+
   saucelabs-upload:
     if: github.ref == 'refs/heads/master' && github.event_name != 'schedule'
     needs: [ android-ci, ios-ci, params ]

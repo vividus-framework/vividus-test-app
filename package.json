@@ -1,6 +1,6 @@
 {
   "name": "vividus-test-app",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
@@ -18,7 +18,7 @@
     "@react-navigation/drawer": "^5.8.6",
     "@react-navigation/native": "^6.0.11",
     "react": "17.0.2",
-    "react-native": "0.67.3",
+    "react-native": "0.68.4",
     "react-native-elements": "^3.4.2",
     "react-native-gesture-handler": "^2.4.2",
     "react-native-image-picker": "^4.8.4",

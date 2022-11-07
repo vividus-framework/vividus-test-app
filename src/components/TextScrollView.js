@@ -12,7 +12,8 @@ const TextScrollView = props => {
         <Text
           style={{...styles.textMarker, marginTop: '10%'}}
           h3
-          {...automationIDs('header')}>
+          {...automationIDs('header')}
+        >
           {props.headerText}
         </Text>
         <Text style={styles.mainText} {...automationIDs('body')}>
@@ -22,7 +23,8 @@ const TextScrollView = props => {
           <Text
             style={{...styles.textMarker, marginBottom: '15%'}}
             h3
-            {...automationIDs('footer')}>
+            {...automationIDs('footer')}
+          >
             {props.footerText}
           </Text>
         )}
