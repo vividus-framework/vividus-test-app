@@ -1,6 +1,6 @@
 const assets = {
-  welcomeImage: require('./image.png'),
-  qrCodeImage: require('./qrCode.png'),
+  welcomeImage: {code: "require('./image.png')"},
+  qrCodeImage: {code: "require('./qrCode.png')"},
 };
 
 module.exports = assets;
