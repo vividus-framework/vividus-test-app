@@ -15,7 +15,7 @@
     "@react-native-community/clipboard": "^1.5.1",
     "@react-native-community/datetimepicker": "^6.7.0",
     "@react-native-community/slider": "^4.3.3",
-    "@react-navigation/drawer": "^5.8.6",
+    "@react-navigation/drawer": "^6.5.0",
     "@react-navigation/native": "^6.0.13",
     "react": "17.0.2",
     "react-native": "0.68.5",
