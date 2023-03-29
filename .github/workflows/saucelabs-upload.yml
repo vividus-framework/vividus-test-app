@@ -25,5 +25,5 @@ jobs:
 
             appFile=vividus-test-app-${platform}-${{ inputs.release-version }}.zip
             curl -L https://github.com/vividus-framework/vividus-test-app/releases/download/${{ inputs.release-version }}/vividus-test-app-${platform}-${{ inputs.release-version }}.zip --output ${appFile}
-            curl -v -u ${SAUCELABS_USER}:${SAUCELABS_KEY} -X POST https://eu-central-1.saucelabs.com/rest/v1/storage/${SAUCELABS_USER}/${appFile}?overwrite=true -H "Content-Type: application/octet-stream" --data-binary @${appFile}
+            curl -v --fail-with-body -u ${SAUCELABS_USER}:${SAUCELABS_KEY} -X POST https://eu-central-1.saucelabs.com/rest/v1/storage/${SAUCELABS_USER}/${appFile}?overwrite=true -H "Content-Type: application/octet-stream" --data-binary @${appFile}
           done  
