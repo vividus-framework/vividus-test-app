@@ -25,5 +25,5 @@ jobs:
 
             appFile=vividus-test-app-${platform}-${{ inputs.release-version }}.zip
             curl -L https://github.com/vividus-framework/vividus-test-app/releases/download/${{ inputs.release-version }}/vividus-test-app-${platform}-${{ inputs.release-version }}.zip --output ${appFile}
-            curl -v --fail-with-body -u ${SAUCELABS_USER}:${SAUCELABS_KEY} --location --request POST 'https://api.eu-central-1.saucelabs.com/v1/storage/upload' --form 'payload=@"${appFile}"' --form 'name="${appFile}"'
+            curl -v --fail-with-body -u ${SAUCELABS_USER}:${SAUCELABS_KEY} --location --request POST "https://api.eu-central-1.saucelabs.com/v1/storage/upload" --form "payload=@${appFile}" --form "name=${appFile}"
           done  
