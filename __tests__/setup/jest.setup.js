@@ -5,3 +5,5 @@ NativeModules.ImagePickerManager = {
   launchCamera: jest.fn(),
   launchImageLibrary: jest.fn(),
 };
+
+jest.useFakeTimers();

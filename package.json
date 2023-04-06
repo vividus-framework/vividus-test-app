@@ -1,6 +1,6 @@
 {
   "name": "vividus-test-app",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
@@ -17,15 +17,15 @@
     "@react-native-community/slider": "^4.4.2",
     "@react-navigation/drawer": "^5.8.6",
     "@react-navigation/native": "^6.1.6",
-    "react": "17.0.2",
-    "react-native": "0.68.5",
+    "react": "18.0.0",
+    "react-native": "0.69.9",
     "react-native-elements": "^3.4.3",
     "react-native-gesture-handler": "^2.4.2",
     "react-native-image-picker": "^4.10.3",
     "react-native-reanimated": "^2.2.4",
     "react-native-safe-area-context": "^4.5.0",
     "react-native-screens": "^3.13.1",
-    "react-native-snap-carousel": "^3.9.1",
+    "react-native-snap-carousel": "^4.0.0-beta.6",
     "react-native-vector-icons": "^7.1.0",
     "react-native-webview": "^11.18.2"
   },
@@ -36,9 +36,9 @@
     "babel-jest": "^29.5.0",
     "eslint": "^7.32.0",
     "jest": "^27.5.1",
-    "metro-react-native-babel-preset": "^0.70.2",
+    "metro-react-native-babel-preset": "^0.70.3",
     "react-native-codegen": "^0.0.15",
-    "react-test-renderer": "17.0.2"
+    "react-test-renderer": "18.0.0"
   },
   "jest": {
     "preset": "react-native",
