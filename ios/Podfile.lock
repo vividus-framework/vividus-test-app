@@ -286,7 +286,7 @@ PODS:
     - glog
   - react-native-image-picker (4.10.3):
     - React-Core
-  - react-native-safe-area-context (4.4.1):
+  - react-native-safe-area-context (4.5.1):
     - RCT-Folly
     - RCTRequired
     - RCTTypeSafety
@@ -400,8 +400,8 @@ PODS:
   - RNScreens (3.13.1):
     - React-Core
     - React-RCTImage
-  - RNVectorIcons (7.1.0):
-    - React
+  - RNVectorIcons (9.2.0):
+    - React-Core
   - SocketRocket (0.6.0)
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
@@ -613,7 +613,7 @@ SPEC CHECKSUMS:
   React-jsinspector: 5b92a5a30e02e1a21802f293cc71e05d887c7378
   React-logger: 96d904c5bc87c2660d48e6a36fb2edf65f9cfb11
   react-native-image-picker: 60f4246eb5bb7187fc15638a8c1f13abd3820695
-  react-native-safe-area-context: 99b24a0c5acd0d5dcac2b1a7f18c49ea317be99a
+  react-native-safe-area-context: f5549f36508b1b7497434baa0cd97d7e470920d4
   react-native-slider: 33b8d190b59d4f67a541061bb91775d53d617d9d
   react-native-webview: 8ec7ddf9eb4ddcd92b32cee7907efec19a9ec7cb
   React-perflogger: f6f4b3c63629ead2e8a5a22eaedd06368c31617a
@@ -633,11 +633,11 @@ SPEC CHECKSUMS:
   RNGestureHandler: 61628a2c859172551aa2100d3e73d1e57878392f
   RNReanimated: e2414d403cc8da634e44103c1ec7a13e87bd6333
   RNScreens: 40a2cb40a02a609938137a1e0acfbf8fc9eebf19
-  RNVectorIcons: bc69e6a278b14842063605de32bec61f0b251a59
+  RNVectorIcons: fcc2f6cb32f5735b586e66d14103a74ce6ad61f8
   SocketRocket: fccef3f9c5cedea1353a9ef6ada904fde10d6608
   Yoga: 7a4d48cfb35dfa542151e615fa73c1a0d88caf21
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: 1a2c66ce7c09df15ea46fb1e3340272acfe20d32
+PODFILE CHECKSUM: 874e97b4fe9fcef4f7c61d34b0ecfa178b272220
 
 COCOAPODS: 1.11.3
