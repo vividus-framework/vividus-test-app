@@ -277,11 +277,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  cocoapods (>= 1.11.2)
+  cocoapods (>= 1.11.3)
   fastlane
 
 RUBY VERSION
    ruby 2.7.6p219
 
 BUNDLED WITH
-   2.4.10
+   2.4.13

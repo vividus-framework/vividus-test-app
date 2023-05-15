@@ -1,6 +1,6 @@
 {
   "name": "vividus-test-app",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
@@ -17,8 +17,8 @@
     "@react-native-community/slider": "^4.4.2",
     "@react-navigation/drawer": "^5.8.6",
     "@react-navigation/native": "^6.1.6",
-    "react": "18.0.0",
-    "react-native": "0.69.10",
+    "react": "18.1.0",
+    "react-native": "0.70.9",
     "react-native-elements": "^3.4.3",
     "react-native-gesture-handler": "^2.4.2",
     "react-native-image-picker": "^4.10.3",
@@ -36,9 +36,9 @@
     "babel-jest": "^29.5.0",
     "eslint": "^7.32.0",
     "jest": "^27.5.1",
-    "metro-react-native-babel-preset": "^0.70.3",
+    "metro-react-native-babel-preset": "^0.72.3",
     "react-native-codegen": "^0.0.15",
-    "react-test-renderer": "18.0.0"
+    "react-test-renderer": "18.1.0"
   },
   "jest": {
     "preset": "react-native",
