@@ -5,4 +5,4 @@ ruby '>= 2.6.10'
 
 gem "fastlane"
 
-gem 'cocoapods', '>= 1.11.2'
+gem 'cocoapods', '>= 1.11.3'
