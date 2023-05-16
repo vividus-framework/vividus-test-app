@@ -9,7 +9,6 @@ import App from '../src/App';
 // Note: test renderer must be required after react-native.
 import renderer from 'react-test-renderer';
 
-jest.useFakeTimers();
 jest.mock('@react-navigation/drawer', () => ({
   createDrawerNavigator: jest.fn().mockReturnValue({
     Navigator: ({children}) => <>{children}</>,
