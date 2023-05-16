@@ -20,7 +20,7 @@ jobs:
           key: ubuntu-android-node-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ubuntu-android-node-
-      
+
       - name: Gradle cache
         uses: actions/cache@v3
         with:
@@ -33,7 +33,7 @@ jobs:
 
       - name: Install npm dependencies
         run: npm install
-      
+
       - name: Run lint
         run: npm run lint
 
@@ -44,7 +44,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: 17
-          distribution: 'adopt'
+          distribution: 'temurin'
 
       - name: Install bundler
         run: |
