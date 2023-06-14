@@ -48,7 +48,7 @@ jobs:
           npm run build-ios -- release_version:${{ inputs.release-version }}
 
       - name: Upload iOS application
-        if: github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/main'
         uses: softprops/action-gh-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.RELEASE_TOKEN }}
