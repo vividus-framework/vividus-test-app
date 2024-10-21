@@ -241,9 +241,9 @@ PODS:
     - glog
   - react-native-image-picker (7.1.2):
     - React-Core
-  - react-native-safe-area-context (4.10.8):
+  - react-native-safe-area-context (4.11.0):
     - React-Core
-  - react-native-slider (4.5.2):
+  - react-native-slider (4.5.3):
     - React-Core
   - react-native-webview (11.18.2):
     - React-Core
@@ -317,7 +317,7 @@ PODS:
     - React-Core
   - RNDateTimePicker (6.7.2):
     - React-Core
-  - RNGestureHandler (2.17.1):
+  - RNGestureHandler (2.20.0):
     - React-Core
   - RNReanimated (2.2.4):
     - DoubleConversion
@@ -523,8 +523,8 @@ SPEC CHECKSUMS:
   React-jsinspector: bfedded1f4f562d29c2d4a8bb795c9a150a739e4
   React-logger: 31f198387a04172be49fe38e41a082560a81aeeb
   react-native-image-picker: 6f8b3ea523b02c622b9e4f9c36f17348aff0909d
-  react-native-safe-area-context: b7daa1a8df36095a032dff095a1ea8963cb48371
-  react-native-slider: bc212e8d10ee28f51cd0db28c7f23827e6adec0a
+  react-native-safe-area-context: 851c62c48dce80ccaa5637b6aa5991a1bc36eca9
+  react-native-slider: 486dcbf515ad522397c88e63a87a0812820f4270
   react-native-webview: 8ec7ddf9eb4ddcd92b32cee7907efec19a9ec7cb
   React-perflogger: 010e98d3335e5185a8f7496babca50d82a042e84
   React-RCTActionSheet: 0f585d684b540a5bbfc62b0a1fbc5292cff2aefc
@@ -540,7 +540,7 @@ SPEC CHECKSUMS:
   ReactCommon: 200471e0841cf2f7cde1fa2ef3d3c199ed970c07
   RNCClipboard: 41d8d918092ae8e676f18adada19104fa3e68495
   RNDateTimePicker: aade709a5a728c04b9736c7dbe84f172e9d6aec4
-  RNGestureHandler: 30704285c8ef803f7705f92dd9428261ed756e24
+  RNGestureHandler: bdf2b3a9b78e6df5f0eccbe72d7dcbbfa9a5018c
   RNReanimated: 1b1b442d84cba454bae467c91a0ac3274e4ca25d
   RNScreens: 40a2cb40a02a609938137a1e0acfbf8fc9eebf19
   RNVectorIcons: fcc2f6cb32f5735b586e66d14103a74ce6ad61f8
