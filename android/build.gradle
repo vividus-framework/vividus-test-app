@@ -27,10 +27,13 @@ subprojects {
             subproject.dependencies {
                 implementation "androidx.activity:activity:1.7.0"
             }
-        }
-        subproject.tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
-            kotlinOptions {
-                jvmTarget = "11"
+            if (subproject.plugins.hasPlugin("org.jetbrains.kotlin.android") ||
+                subproject.plugins.hasPlugin("kotlin-android")) {
+                subproject.android {
+                    kotlinOptions {
+                        jvmTarget = "11"
+                    }
+                }
             }
         }
     }
