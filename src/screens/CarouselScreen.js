@@ -50,8 +50,7 @@ class CarouselScreen extends Component {
           padding: 50,
           marginLeft: 25,
           marginRight: 25,
-        }}
-      >
+        }}>
         <Text {...automationIDs(item.title)} style={{fontSize: 30}}>
           {item.title}
         </Text>
@@ -69,8 +68,7 @@ class CarouselScreen extends Component {
             flex: 1,
             justifyContent: 'center',
             alignItems: 'center',
-          }}
-        >
+          }}>
           <Carousel
             inactiveSlideOpacity={0.1}
             activeSlideOffset={50}

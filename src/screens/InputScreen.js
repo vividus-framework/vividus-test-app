@@ -38,8 +38,7 @@ class InputScreen extends Component {
           />
           <TouchableOpacity
             onPress={() => Clipboard.setString(this.state.name)}
-            {...automationIDs('CopyTextToClipboardButton')}
-          >
+            {...automationIDs('CopyTextToClipboardButton')}>
             <Text>Copy text to Clipboard</Text>
           </TouchableOpacity>
         </View>
