@@ -25,6 +25,9 @@ subprojects {
     afterEvaluate { subproject ->
         if (subproject.plugins.hasPlugin("com.android.library") ||
             subproject.plugins.hasPlugin("com.android.application")) {
+            subproject.android {
+                compileSdkVersion rootProject.ext.compileSdkVersion
+            }
             subproject.dependencies {
                 implementation "androidx.activity:activity:1.7.0"
             }
