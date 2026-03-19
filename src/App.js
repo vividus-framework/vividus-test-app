@@ -30,7 +30,7 @@ const App = () => {
   return (
     <SafeAreaView style={{flex: 1}}>
       <NavigationContainer>
-        <Drawer.Navigator initialRouteName="Home" component={HomeScreen}>
+        <Drawer.Navigator initialRouteName="Home">
           <Drawer.Screen name="Home" component={HomeScreen} />
           <Drawer.Screen name="Button" component={ButtonScreen} />
           <Drawer.Screen name="Input" component={InputScreen} />
