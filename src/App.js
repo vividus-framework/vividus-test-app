@@ -7,7 +7,7 @@
  */
 
 import React from 'react';
-import {SafeAreaView} from 'react-native';
+import {SafeAreaView, StyleSheet} from 'react-native';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {NavigationContainer} from '@react-navigation/native';
@@ -27,10 +27,16 @@ import SliderScreen from './screens/SliderScreen';
 
 const Drawer = createDrawerNavigator();
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
+
 const App = () => {
   return (
-    <GestureHandlerRootView style={{flex: 1}}>
-      <SafeAreaView style={{flex: 1}}>
+    <GestureHandlerRootView style={styles.container}>
+      <SafeAreaView style={styles.container}>
         <NavigationContainer>
           <Drawer.Navigator initialRouteName="Home">
             <Drawer.Screen name="Home" component={HomeScreen} />
