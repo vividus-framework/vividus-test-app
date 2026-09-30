@@ -8,6 +8,7 @@
 
 import React from 'react';
 import {SafeAreaView} from 'react-native';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {NavigationContainer} from '@react-navigation/native';
 
@@ -28,27 +29,29 @@ const Drawer = createDrawerNavigator();
 
 const App = () => {
   return (
-    <SafeAreaView style={{flex: 1}}>
-      <NavigationContainer>
-        <Drawer.Navigator initialRouteName="Home">
-          <Drawer.Screen name="Home" component={HomeScreen} />
-          <Drawer.Screen name="Button" component={ButtonScreen} />
-          <Drawer.Screen name="Input" component={InputScreen} />
-          <Drawer.Screen name="Image" component={ImageScreen} />
-          <Drawer.Screen name="QR Code" component={QRCodeScreen} />
-          <Drawer.Screen name="Wait" component={WaitScreen} />
-          <Drawer.Screen name="Date Picker" component={DatePickerScreen} />
-          <Drawer.Screen name="Scroll View" component={ScrollViewScreen} />
-          <Drawer.Screen
-            name="Short Scroll View"
-            component={ShortScrollViewScreen}
-          />
-          <Drawer.Screen name="Web View" component={WebViewScreen} />
-          <Drawer.Screen name="Carousel" component={CarouselScreen} />
-          <Drawer.Screen name="Slider" component={SliderScreen} />
-        </Drawer.Navigator>
-      </NavigationContainer>
-    </SafeAreaView>
+    <GestureHandlerRootView style={{flex: 1}}>
+      <SafeAreaView style={{flex: 1}}>
+        <NavigationContainer>
+          <Drawer.Navigator initialRouteName="Home">
+            <Drawer.Screen name="Home" component={HomeScreen} />
+            <Drawer.Screen name="Button" component={ButtonScreen} />
+            <Drawer.Screen name="Input" component={InputScreen} />
+            <Drawer.Screen name="Image" component={ImageScreen} />
+            <Drawer.Screen name="QR Code" component={QRCodeScreen} />
+            <Drawer.Screen name="Wait" component={WaitScreen} />
+            <Drawer.Screen name="Date Picker" component={DatePickerScreen} />
+            <Drawer.Screen name="Scroll View" component={ScrollViewScreen} />
+            <Drawer.Screen
+              name="Short Scroll View"
+              component={ShortScrollViewScreen}
+            />
+            <Drawer.Screen name="Web View" component={WebViewScreen} />
+            <Drawer.Screen name="Carousel" component={CarouselScreen} />
+            <Drawer.Screen name="Slider" component={SliderScreen} />
+          </Drawer.Navigator>
+        </NavigationContainer>
+      </SafeAreaView>
+    </GestureHandlerRootView>
   );
 };
 
