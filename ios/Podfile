@@ -66,6 +66,15 @@ target 'vividusTestApp' do
       target.build_configurations.each do |config|
         config.build_settings['CLANG_CXX_LANGUAGE_STANDARD'] = 'c++17'
       end
+
+      if target.name == 'Yoga'
+        target.build_configurations.each do |config|
+          build_settings = config.build_settings
+          cxx_flags = Array(build_settings['OTHER_CPLUSPLUSFLAGS'] || '$(inherited)').join(' ')
+          # Xcode 26 treats Yoga's deprecated C++ literal operators as errors.
+          build_settings['OTHER_CPLUSPLUSFLAGS'] = "#{cxx_flags} -Wno-error=deprecated-literal-operator"
+        end
+      end
     end
   end
 end
